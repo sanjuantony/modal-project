@@ -1,8 +1,10 @@
 <template>
-    <div class="backdrop">
+    <div class="backdrop" @click.self='this.$emit("closeModal")'>
         <div class="modal">
-            <h1> {{ header }}  </h1>
-            <p>{{ text }}</p>
+            <slot> </slot>
+            <div class="actions">
+                <slot name="links"></slot>
+            </div>
         </div>
     </div>
 </template>
@@ -10,7 +12,12 @@
 <script>
 export default {
     //name: 'Modal',
-    props: ['header','text']
+    //props: ['header','text'],
+    methods: {
+        closeModal() {
+            this.$emit("closeModal")
+        }
+    }
 }
 </script>
 
@@ -33,5 +40,8 @@ export default {
     }
     .modal h1 {
         color: green;
+    }
+    .modal .actions a{
+        color:brown;
     }
 </style>
