@@ -3,38 +3,38 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
 -->
+  <div>
+    <h1>{{title}}</h1>
+    <br>
+    <button @click="toggleModal">Show Modal Window #1</button>
+    <button @click="toggleModal2">Show Modal Window #2</button>
+    <!--
+    <br>
+    <input type="text" ref="txt" width="100px">
+    <button @click="handleClick">Click Me</button>
+    -->
+    <div v-if="showModal">
+      <Modal  @closeModal="toggleModal">
+          <h2>{{header}}</h2>
+          <p>{{text}}</p>
+          <template v-slot:links >
+            <a href="#">Link 1</a><br>
+            <a href="#">Link 2</a>
+          </template>
+      </Modal>
+    </div>
 
-<h1>{{title}}</h1>
-<br>
-<button @click="toggleModal">Show Modal Window #1</button>
-<button @click="toggleModal2">Show Modal Window #2</button>
-<!--
-<br>
-<input type="text" ref="txt" width="100px">
-<button @click="handleClick">Click Me</button>
--->
-<div v-if="showModal">
-  <Modal  @closeModal="toggleModal">
-      <h2>{{header}}</h2>
-      <p>{{text}}</p>
-      <template v-slot:links >
-        <a href="#">Link 1</a><br>
-        <a href="#">Link 2</a>
-      </template>
-  </Modal>
-</div>
-
-<div v-if="showModal2">
-  <Modal  @closeModal="toggleModal2">
-      <h2>Modal 2</h2>
-      <p>Welcome to model # 2</p>
-      <template v-slot:links >
-        <a href="#">Link 1</a><br>
-        <a href="#">Link 2</a>
-      </template>
-  </Modal>
-</div>
-
+    <div v-if="showModal2">
+      <Modal  @closeModal="toggleModal2">
+          <h2>Modal 2</h2>
+          <p>Welcome to model # 2</p>
+          <template v-slot:links >
+            <a href="#">Link 1</a><br>
+            <a href="#">Link 2</a>
+          </template>
+      </Modal>
+    </div>
+  </div>
 </template>
 
 <script>
