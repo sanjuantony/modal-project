@@ -3,9 +3,9 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
 -->
-<!--
-<h1>{{title}}</h1>
 
+<h1>{{title}}</h1>
+<!--
 <br>
 <input type="text" ref="txt" width="100px">
 <button @click="handleClick">Click Me</button>
