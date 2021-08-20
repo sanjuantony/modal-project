@@ -7,7 +7,7 @@
     <h1>{{title}}</h1>
     <br>
     <button @click="toggleModal">Show Modal Window #1</button>
-    <br>
+    <br><br>
     <button @click="toggleModal2">Show Modal Window #2</button>
     <!--
     <br>
